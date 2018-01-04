@@ -15,7 +15,7 @@ const codes = require('../restapi/http-codes');
 const HttpError = require('../restapi/http-error.js');
 
 // TODO add here your require for your own model file
-
+const PinsModel = require('../models/pin');
 
 const pins = express.Router();
 
