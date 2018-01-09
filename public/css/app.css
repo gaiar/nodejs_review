@@ -1,0 +1,337 @@
+.additionalinfo {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 15px;
+  color: white;
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 4px;
+  background-color: #431fbe;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.bar1.change {
+  -webkit-transform: rotate(-45deg) translate(-7px, 7px);
+  transform: rotate(-45deg) translate(-7px, 7px);
+}
+.bar2.change {
+  opacity: 0;
+}
+.bar3.change {
+  -webkit-transform: rotate(45deg) translate(-7px, -7px);
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+button:focus {
+  outline: 0;
+}
+.buttondiv {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 219px;
+  bottom: 20px;
+}
+.close {
+  color: #431fbe;
+  display: flex;
+  order: 2;
+  font-size: 3em;
+  font-weight: 400;
+}
+.close:hover,
+.close:focus {
+  color: #26116d;
+  text-decoration: none;
+  cursor: pointer;
+}
+.coloumncontainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  max-height: 880px;
+  flex-wrap: wrap;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.enlarge {
+  margin-right: 20px;
+  display: inline-block;
+  padding: 2px;
+  background: url(../../res/icons/add.svg) no-repeat center;
+  background-color: rgba(183, 183, 183, 0.36);
+  background-size: contain;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.enlarge:hover {
+  transition: transform 0.5s;
+  transform: rotate(360deg);
+}
+.enlarged-pic {
+  justify-content: center;
+  margin: auto;
+  padding-left: 4em;
+  height: 95vh;
+  width: 95vw;
+}
+.enlarged-pic img {
+  display: flex;
+  margin: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  bottom: 10px;
+  padding: 1em 1em 0 4em;
+  border-top: solid 1px;
+  margin-left: -35px;
+}
+html,
+body {
+  font-family: Arial, serif;
+  font-size: 1em;
+  color: #431fbe;
+  margin-left: 35px;
+  background: #cccccc url(../../res/pictures/2_trans.jpg) no-repeat fixed;
+}
+#left {
+  align-items: left;
+}
+.like {
+  margin-right: 30px;
+  display: inline-block;
+  background: url(../res/icons/heart.svg) no-repeat center;
+  background-color: rgba(183, 183, 183, 0.36);
+  background-size: contain;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.like:hover {
+  transition: transform 0.5s;
+  transform: rotate(360deg);
+}
+.liked + .enlarge {
+  visibility: hidden;
+}
+.liked + .remember {
+  visibility: hidden;
+}
+.like.button-activated {
+  visibility: visible;
+  opacity: 1;
+}
+#menu-icon {
+  position: absolute;
+  display: inline-block;
+  top: 4%;
+  cursor: pointer;
+}
+.menu {
+  position: absolute;
+  z-index: 100;
+  display: block;
+  font-size: 1.1em;
+  font-weight: 400;
+  top: 10%;
+  color: #431fbe;
+  text-align: center;
+  cursor: pointer;
+}
+#menu-items {
+  position: absolute;
+  top: 15%;
+  width: 55%;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.1em;
+  color: #431fbe;
+  display: block;
+  opacity: 0;
+  transition: 0.3s;
+}
+#menu-items li {
+  list-style-type: none;
+  border-bottom: solid 1px;
+}
+#menu-items a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #431fbe;
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+}
+#menu-items a:hover {
+  color: #431fbe;
+}
+#menu-items.nav-show {
+  opacity: 1;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.movie {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  background-color: rgba(183, 183, 183, 0.36);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 15px;
+}
+.movie button {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.movie:hover button {
+  visibility: visible;
+  opacity: 1;
+}
+.movie.remembered {
+  background-color: rgba(229, 170, 23, 0.8);
+}
+#navbar {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 4em;
+  height: 100%;
+  background-color: #fff;
+  z-index: 3000;
+  justify-content: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+#navbar.width {
+  width: 15em;
+}
+picture button {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+picture:hover button {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+.picturecontainer {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  background-color: rgba(183, 183, 183, 0.36);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 15px;
+}
+.picturecontainer.remembered {
+  background-color: rgba(229, 170, 23, 0.8);
+}
+.picturecontainer > img {
+  max-width: 219px;
+  border-radius: 10px;
+}
+.picturecontainer > video {
+  width: 219px;
+  border-radius: 10px;
+}
+.remember {
+  margin-right: 20px;
+  display: inline-block;
+  background: url(../../res/icons/star.svg) no-repeat center;
+  background-color: rgba(183, 183, 183, 0.36);
+  background-size: contain;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.remember:hover {
+  transition: transform 0.5s;
+  transform: rotate(360deg);
+}
+#right {
+  margin-right: 50px;
+  align-items: right;
+}
+.showmodallikes {
+  display: block;
+  left: 0;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(67, 31, 190, 0.5);
+}
+.videoButtonDiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 219px;
+  bottom: 20px;
+}
+@media (max-width: 1400px) {
+  .coloumncontainer {
+    flex-wrap: wrap;
+    max-height: 1000px;
+  }
+}
+@media (max-width: 1122px) {
+  .coloumncontainer {
+    flex-wrap: wrap;
+    max-height: 1300px;
+  }
+}
+@media (max-width: 878px) {
+  .coloumncontainer {
+    flex-wrap: wrap;
+    max-height: 2000px;
+  }
+}
+@media (max-width: 610px) {
+  .coloumncontainer {
+    flex-wrap: wrap;
+    max-height: 4000px;
+  }
+}
