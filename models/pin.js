@@ -11,7 +11,7 @@ const PinSchema = new Schema({
     description: {type: String, default: ""},
     views: {type: Number, min: 0, default: 0},
     ranking: {type: Number, min: 0, default: 0}
-})
+});
 
 
-const PinModel = mongoose.model("Pin", {message: String});
+module.exports = mongoose.model("Pin", PinSchema);

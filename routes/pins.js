@@ -19,14 +19,31 @@ const PinModel = require('../models/pin');
 
 const pins = express.Router();
 
-const storeKey = 'pins';
-
 // routes **************
 pins.route('/')
     .get((req, res, next) => {
         // TODO replace store and use mongoose/MongoDB
         // res.locals.items = store.select(storeKey);
-        PinModel.find({}, (err, items) => {
+
+
+        let limit = parseInt(req.query.limit);
+        if((!req.query.limit >= 0 || isNaN(limit)) && !limit === undefined){
+            next(new HttpError("Invalid value for argument limit", codes.wrongrequest));
+            return;
+        }
+        let offset = parseInt(req.query.offset);
+        logger("offset"+offset)
+        if(!req.query.offset >= 0 || isNaN(offset)&& !offset === undefined){
+            next(new HttpError("Invalid value for argument offset", codes.wrongrequest));
+            return;
+        }
+
+
+        let query = PinModel.find({})
+            .skip(offset)
+            .limit(limit);
+
+        query.exec((err, items) => {
             res.status(codes.success).json(items);
             res.locals.processed = true;
             logger("GET fetched items");
@@ -35,10 +52,11 @@ pins.route('/')
 
     })
     .post((req,res,next) => {
-        req.body.timestamp = new Date().getTime();
+        // req.body.timestamp = new Date().getTime();
         // TODO replace store and use mongoose/MongoDB
         // var result = store.insert(storeKey, req.body);
         let pin = new PinModel(req.body);
+        logger(pin);
         pin.save(err => {
             if (err) {
                 return next(err);
@@ -135,7 +153,7 @@ pins.use((req, res, next) => {
         delete res.locals.items;
     } else if (res.locals.processed) {
         res.set('Content-Type', 'application/json'); // not really necessary if "no content"
-        if (res.get('Status-Code') == undefined) { // maybe other code has set a better status code before
+        if (res.get('Status-Code') === undefined) { // maybe other code has set a better status code before
             res.status(204); // no content;
         }
         res.end();

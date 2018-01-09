@@ -1,15 +1,92 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="de-de">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Johannes Konert">
-    <meta name="keywords" content="WE2, Ü4">
-    <meta name="description" content="Diese leere Indexdatei soll nur verdeutlichen, dass sie parallel zu Ihren REST-API
-     Routen weiterhin eine statische SinglePageApp (SPA) ausliefern können. Diese könnte dann bspw. mittels AJAX
-     (jQuery) Ihre REST-API anfragen und Inhalte Laden/Speichern">
-    <title>Dummy Startseite</title>
+    <title>Web Engineering 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js" defer="true"></script>
+
 </head>
+
 <body>
-Sie sollten diese Startseite ersetzen durch die richtige index.html, welche mittels Backbone.js dann Ihre REST-API nutzt.
+
+<header>
+
+</header>
+
+<nav id="navbar">
+    <div id="menu-icon">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <!--"Menü" text overlapping with Burger in Landscape mode on mobile-->
+    <div class="menu"></div>
+    <ul id="menu-items">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<main class="coloumncontainer">
+    <picture class="picturecontainer"><img src="res/pictures/food.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/food.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_A cute puppy in a pink bed.jpg"/></picture>
+
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_A cute puppy in a pink bed (1).jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_Black cat with flowers and a painting.jpg"/></picture>
+
+    <video class="picturecontainer" src="https://shray.de/data/videos/cg1.mp4" width="219" controls preload></video>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_A cute puppy in a pink bed.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_Cute white kitty.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_Variety of Pumpkins.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_White ducks on the grass.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/sports.jpg"/></picture>
+
+    <video class="picturecontainer" src="https://shray.de/data/videos/cg-konni.mp4" width="219" controls preload=""></video>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_Black cat with flowers and a painting.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/sports1.jpg"/></picture>
+
+    <picture class="picturecontainer"><img src="res/pictures/kaboompics_White ducks on the grass.jpg"/></picture>
+
+
+</main>
+
+
+<footer>
+    <div id="left">Tobias Frank, Konstantin Hungs, Ekaterina Anisimova</div>
+    <div id="right">© 2017 by Gruppe 143158</div>
+</footer>
+<!--Mein Teil Start-->
+<!-- The Modal -->
+<div id="modal-overlay" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="close">&times;</div>
+        <div class="enlarged-pic">
+
+        </div>
+    </div>
+
+</div>
+<!--Mein Teil Ende-->
+
 </body>
+
 </html>
