@@ -13,5 +13,61 @@ const PinSchema = new Schema({
     ranking: {type: Number, min: 0, default: 0}
 });
 
+// var model = mongoose.model("Pin", PinSchema);
+// model.collection.insert([
+//     {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/1.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/2.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/2_trans.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/4.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/5.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/6.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/7.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/8.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/9.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/10.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/11.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/12.jpg',
+//     },    {
+//         title: '',
+//         type: 'image',
+//         src: '/res/pictures/13.jpg',
+//     },
+// ]);
 
 module.exports = mongoose.model("Pin", PinSchema);
