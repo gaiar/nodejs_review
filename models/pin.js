@@ -13,7 +13,7 @@ const PinSchema = new Schema({
     ranking: {type: Number, min: 0, default: 0}
 });
 
-// var model = mongoose.model("Pin", PinSchema);
+var model = mongoose.model("Pin", PinSchema);
 // model.collection.insert([
 //     {
 //         title: '',
@@ -70,4 +70,4 @@ const PinSchema = new Schema({
 //     },
 // ]);
 
-module.exports = mongoose.model("Pin", PinSchema);
+module.exports = model;
