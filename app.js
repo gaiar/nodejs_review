@@ -34,7 +34,7 @@ const app = express();
 // Middlewares *************************************************
 // app.use(favicon(path.join(__dirname, 'public', 'images/faviconbeuth.ico')));
 // app.use(favicon(path.join('public/', './', '/img/faviconbeuth.ico')));
-app.use('/public/', express.static('public'));
+app.use('/public/', express.static(__dirname + '/public'));
 app.use('/res/', express.static('res'));
 // logging
 app.use(morgan('dev'));

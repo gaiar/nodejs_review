@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <script  src="js/require.js" data-main="js/appclient" type="text/javascript"></script>
-    <script  src="js/app.js" defer="true" type="text/javascript"></script>
+    <!--<script  src="js/app.js" defer="true" type="text/javascript"></script>-->
 </head>
 
 <body>
@@ -15,6 +15,8 @@
 <header>
     <picture id="logocontainer"><img src="/res/pictures/logo.svg" alt="Logo"></picture>
 </header>
+<div class="testclass"><a>TEST</a></div>
+<div class="pins"><a>Pins</a></div>
 
 <nav id="navbar">
     <div id="menu-icon">
@@ -32,7 +34,10 @@
         </ul>
 </nav>
 
-<main class="coloumncontainer">
+<main id="pin-list">
+    <script type="text/template" id="pin-template">
+        <img src="<%=src%>"/>
+    </script>
     <picture class="picturecontainer content"><img src="/res/pictures/food.jpg" data-name="Keins"/></picture>
 
     <picture class="picturecontainer content"><img src="/res/pictures/food.jpg" data-name="Null :-)"/></picture>

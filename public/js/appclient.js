@@ -10,7 +10,9 @@ requirejs.config({
         jquery: '_lib/jquery-1.11.3',
         underscore: '_lib/underscore-1.8.3',
         backbone: '_lib/backbone-1.2.3',
-        pin: 'models/pin'
+        pin: 'models/pin',
+        pinview: 'views/pin',
+        pinlistview: 'views/pinList'
     },
     shim: {
         underscore: {
@@ -18,7 +20,7 @@ requirejs.config({
         },
         backbone: {
             deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
+            attach: 'Backbone'
         },
         pin: {
             exports: 'Pin'
@@ -27,21 +29,44 @@ requirejs.config({
 });
 
 // AMD conform require as provided by require.js
-require(['jquery', 'backbone', 'pin'],
-    function ($, backbone, Pin) {
-        $('body').prepend('<h1>Binterest Pins App</h1>');
+require(['jquery', 'backbone', 'pin', 'pinview', 'pinlistview'],
+    function ($, backbone, Pin, PinView, PinListView) {
 
-        var AppRouter = Backbone.Router.extend({
+        var pinCollection = new Pin.Collection();
+        var ApplicationRouter = backbone.Router.extend({
+
+            //map url routes to contained methods
             routes: {
-                'pins': 'showPins'
+                "home": "home",
+                "p": "pins"
             },
-            showPins: function(){
-                var pins = new Pin.Collection();
-                pins.fetch({
-                    success: function(){alert("HUHU")}
-                });
+
+            home: function () {
+                alert("TEST")
+            },
+
+            pins: function () {
+                pinCollection.fetch({
+                    success: function(items, response) {
+                        var myPinListView = new PinListView({collection:items});
+                        console.log(myPinListView.render().el);
+
+                },
+                error: function() {
+                }
+            })
             }
+
+
         });
-        var myAppRouter = new AppRouter();
+        var app = new ApplicationRouter();
         Backbone.history.start({pushState: true});
+
+
+        $('.testclass').on("click", function(){
+            app.navigate("home", true)
+        });
+        $('.pins').on("click", function(){
+            app.navigate("p", true)
+        })
     });

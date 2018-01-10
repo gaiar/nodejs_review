@@ -26,23 +26,23 @@ pins.route('/')
         // res.locals.items = store.select(storeKey);
 
 
-        let limit = (Number)(req.query.limit);
-        if (req.query.limit === undefined || isNaN(req.query.limit) || req.query.limit < 0){
-            next(new HttpError("Invalid value for argument limit", codes.wrongrequest));
-            return;
-        }
-
-        let offset = (Number)(req.query.offset);
-        if (req.query.offset === undefined || isNaN(req.query.offset) || req.query.offset < 0){
-                next(new HttpError("Invalid value for argument offset", codes.wrongrequest));
-                return;
-        }
+        // let limit = (Number)(req.query.limit);
+        // if (req.query.limit === undefined || isNaN(req.query.limit) || req.query.limit < 0){
+        //     next(new HttpError("Invalid value for argument limit", codes.wrongrequest));
+        //     return;
+        // }
+        //
+        // let offset = (Number)(req.query.offset);
+        // if (req.query.offset === undefined || isNaN(req.query.offset) || req.query.offset < 0){
+        //         next(new HttpError("Invalid value for argument offset", codes.wrongrequest));
+        //         return;
+        // }
 
 
 
         let query = PinModel.find({})
-            .skip(offset)
-            .limit(limit);
+            // .skip(offset)
+            // .limit(limit);
 
         query.exec((err, items) => {
             res.status(codes.success).json(items);
